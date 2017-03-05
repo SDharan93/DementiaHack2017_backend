@@ -7,22 +7,19 @@ class Instructions(models.Model):
     Author = models.CharField(max_length=255, default=""), # Make this a user reference one day...
     intentID = models.CharField(max_length=255),
 
-    class Meta:
-        ordering = ('createdAt',)
-
 
 class Steps(models.Model):
     title = models.CharField(max_length=255),
-    message = models.CharField(),
+    message = models.CharField(max_length=255),
     failureCount = models.IntegerField(default=0)
     media = models.ForeignKey(Instructions, related_name='media')
 
 
 # Used to control possible assets
 class Media(models.Model):
-    audio = models.CharField(default=""),
-    video = models.CharField(default=""),
-    picture = models.CharField(default="")
+    audio = models.CharField(max_length=255, default=""),
+    video = models.CharField(max_length=255, default=""),
+    picture = models.CharField(max_length=255, default="")
     step = models.ForeignKey(Steps, related_name='step')
 
 
