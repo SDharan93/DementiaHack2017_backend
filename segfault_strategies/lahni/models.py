@@ -6,6 +6,7 @@ class Instructions(models.Model):
     createdAt = models.DateTimeField(auto_now_add=True)
     author = models.CharField(max_length=255, default="") # Make this a user reference one day...
     intentID = models.CharField(max_length=255, unique=True)
+    isComplete = models.BooleanField(default=False)
 
 
 class Steps(models.Model):
