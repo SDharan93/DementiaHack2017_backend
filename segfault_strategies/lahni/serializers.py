@@ -13,6 +13,9 @@ class InstructionSerializer(serializers.Serializer):
         )
         model = models.Instructions
 
+    def create(self, validated_data):
+        return models.Instructions(**validated_data)
+
 
 class StepSerializer(serializers.Serializer):
     class Meta:
@@ -23,6 +26,9 @@ class StepSerializer(serializers.Serializer):
         )
         model = models.Steps
 
+    def create(self, validated_data):
+        return models.Steps(**validated_data)
+
 class MediaSerializer(serializers.Serializer):
     class Meta:
         field = (
@@ -31,3 +37,6 @@ class MediaSerializer(serializers.Serializer):
             'picture'
         )
         model = models.Media
+
+    def create(self, validated_data):
+        return models.Media(**validated_data)
