@@ -19,3 +19,4 @@ tests/report/
 
 # pycharm 
 segfault_strategies/.idea/
+segfault_strategies/db.sqlite3
