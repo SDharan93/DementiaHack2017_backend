@@ -25,7 +25,7 @@ SECRET_KEY = '3xl+c&0!m&e2_85*9kdlrssun&j3*ca^#_jz%a7elb6d&)z00='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['8654b187.ngrok.io']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Third party apps
     'rest_framework',
+    'rest_framework_docs',
     # Internal apps
     'lahni',
 ]
@@ -129,4 +130,8 @@ REST_FRAMEWORK = {
         # Allowany allows anyone to use the endpoints, hacky I know...
         'rest_framework.permissions.AllowAny',
     ],
+}
+
+REST_FRAMEWORK_DOCS = {
+    'HIDE_DOCS': False  # Default: False
 }

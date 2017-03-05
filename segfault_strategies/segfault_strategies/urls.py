@@ -21,4 +21,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^api/v1/instructions/', include('lahni.urls', namespace='interactions')),
     url(r'^admin/', admin.site.urls),
+    url(r'^docs/', include('rest_framework_docs.urls')),
 ]
