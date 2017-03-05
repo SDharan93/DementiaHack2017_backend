@@ -12,7 +12,7 @@ class Steps(models.Model):
     title = models.CharField(max_length=255, default="")
     message = models.CharField(max_length=255)
     failureCount = models.IntegerField(default=0)
-    media = models.ForeignKey(Instructions, related_name='media')
+    instruction = models.ForeignKey(Instructions, related_name='step')
     createdAt = models.DateTimeField(auto_now_add=True)
 
 
@@ -21,7 +21,7 @@ class Media(models.Model):
     audio = models.CharField(max_length=255, default="")
     video = models.CharField(max_length=255, default="")
     picture = models.CharField(max_length=255, default="")
-    step = models.ForeignKey(Steps, related_name='step')
+    step = models.ForeignKey(Steps, related_name='media')
     createdAt = models.DateTimeField(auto_now_add=True)
 
 
